@@ -1,4 +1,5 @@
 import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -11,10 +12,10 @@ import {Link} from 'react-router-dom'
 
 function MyNavbar() {
   return (
-    <Navbar collapseOnSelect bg="#fff" className='navbar'>
+    <Navbar collapseOnSelect expand="lg" bg="#fff" className='navbar'>
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo linkedin" className='logo'/>
       <Navbar.Brand href="#home" xs={5} className='ms-5'>React-Bootstrap</Navbar.Brand>
-      <Container xs={7} className='ms-auto' id='Container'>
+      <Container className='ms-auto' id='Container'>
         <div className='contenitore ms-auto'>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,6 +31,20 @@ function MyNavbar() {
             <div className='Me'>
             <CgProfile id='icon' size={25}/>
             <NavDropdown title="Me" id="collasible-nav-dropdown">
+            
+              <div>
+                 <h3>username</h3>
+                 <p>Ultima esperienza lavorativa</p>
+                 <Button variant="outline-primary">Primary</Button>
+                 <NavDropdown.Divider />
+                 <h4>Account</h4>
+                 <ul id='Account'>
+                    <li><b>Try premium for free</b></li>
+                    <li>Settings & Privacy</li>
+                    <li>Help</li>
+                    <li>Language</li>
+                 </ul>
+              </div>
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
