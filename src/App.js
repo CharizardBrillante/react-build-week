@@ -1,7 +1,6 @@
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import MyNavbar from './components/MyNavbar';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import MyNavbar from "./components/MyNavbar";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
@@ -27,23 +26,19 @@ function App() {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        dispatch(getUsersAction(res['0']));
+        dispatch(getUsersAction(res["0"]));
       })
       .catch((err) => console.error(err));
   };
 
   return (
     <BrowserRouter>
-    <div className="App">
-
-      <MyNavbar/>
-
-      <BrowserRouter>
+      <div className="App">
+        <MyNavbar />
         <Routes>
           <Route path="/user/:id" element={<Profile />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
     </BrowserRouter>
   );
 }

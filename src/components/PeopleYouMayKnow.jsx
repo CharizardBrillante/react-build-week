@@ -7,9 +7,8 @@ const PeopleYouMayKnow = () => {
     return (
         <ListGroup>
             {people.map(user => (
-                <ListGroup.Item>
+                <ListGroup.Item key={user._id}>
                     <PeoplePreview
-                        key={user._id}
                         imgUrl={user.image}
                         name={`${user.name} ${user.surname}`}
                         workPosition={user.title}/>                        
