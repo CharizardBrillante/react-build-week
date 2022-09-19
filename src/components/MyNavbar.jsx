@@ -23,7 +23,7 @@ function MyNavbar() {
             <Link href="#pricing"  id='link' path='/home' className='m-3 mt-1'> <BsPeopleFill id='icon' size={25}/> <p>My Network</p></Link>
           
             <Link href="#deets"  id='link' path='/home' className='m-3 mt-1'> <MdWork id='icon' size={25}/> <p>Jobs</p></Link>
-            <Link eventKey={2}  id='link' href="#memes" path='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
+            <Link id='link' href="#memes" path='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
             <Link path='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
 
 
