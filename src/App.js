@@ -1,4 +1,7 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import MyNavbar from './components/MyNavbar';
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
@@ -30,13 +33,18 @@ function App() {
   };
 
   return (
+    <BrowserRouter>
     <div className="App">
+
+      <MyNavbar/>
+
       <BrowserRouter>
         <Routes>
           <Route path="/user/:id" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
+    </BrowserRouter>
   );
 }
 
