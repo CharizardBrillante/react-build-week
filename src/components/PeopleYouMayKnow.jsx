@@ -3,9 +3,13 @@ import { useSelector } from 'react-redux';
 import PeoplePreview from './PeoplePreview';
 
 const PeopleYouMayKnow = () => {
-    const people = useSelector(state => state.users.fetchedUsers)
+    const people = useSelector(state => state.users.fetchedUsers['0'].slice(1, 6))
     return (
         <ListGroup>
+            <ListGroup.Item>
+                <h4>People you may know</h4>
+            </ListGroup.Item>
+            
             {people.map(user => (
                 <ListGroup.Item key={user._id}>
                     <PeoplePreview
