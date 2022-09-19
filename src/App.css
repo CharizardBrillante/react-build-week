@@ -24,6 +24,7 @@
   align-items: flex-start;
 }
 
-#premium{
-  width: 7vw;
+.people-preview img {
+  width: 80px;
+  border-radius: 50%;
 }

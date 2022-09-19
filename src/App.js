@@ -25,8 +25,8 @@ function App() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        dispatch(getUsersAction(res["0"]));
+        console.log('users: ',res);
+        dispatch(getUsersAction(res));
       })
       .catch((err) => console.error(err));
   };
