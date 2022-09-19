@@ -1,19 +1,13 @@
-<<<<<<< HEAD
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MyNavbar from './components/MyNavbar';
-
-
-=======
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
->>>>>>> 07b243eef56f41b11ae76d44ec09287257131c49
 
 function App() {
   const dispatch = useDispatch();
@@ -41,15 +35,14 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-<<<<<<< HEAD
+
       <MyNavbar/>
-=======
+
       <BrowserRouter>
         <Routes>
           <Route path="/user/:id" element={<Profile />} />
         </Routes>
       </BrowserRouter>
->>>>>>> 07b243eef56f41b11ae76d44ec09287257131c49
     </div>
     </BrowserRouter>
   );
