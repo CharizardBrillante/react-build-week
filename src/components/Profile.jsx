@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import PeopleYouMayKnow from "./PeopleYouMayKnow";
 import ProfileMainArea from "./ProfileMainArea";
 
 const Profile = () => {
@@ -19,7 +20,9 @@ const Profile = () => {
         <Col md={7} lg={9}>
           <ProfileMainArea user={user} />
         </Col>
-        <Col md={5} lg={3}></Col>
+        <Col md={5} lg={3}>
+          <PeopleYouMayKnow/>
+        </Col>
       </Row>
     </Container>
   );

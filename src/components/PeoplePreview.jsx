@@ -1,5 +1,5 @@
-import { Button } from "react-bootstrap/lib/InputGroup"
-import { Container } from "react-bootstrap/lib/Tab"
+
+import { Container, Row, Col, Button } from "react-bootstrap"
 
 const PeoplePreview = (props) => {
     return (
