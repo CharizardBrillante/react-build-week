@@ -70,6 +70,7 @@
 .btn-msg {
   border: 1px solid #0077B5;
   color: #0077B5;
+}
 
 .people-preview button {
   color: var(--dark-gray)!important;
