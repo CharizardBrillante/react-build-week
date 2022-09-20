@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0 auto;
 }
 
 .logo{
@@ -31,8 +32,11 @@
 
 .main-profile-card {
   background-image: url('../public/assets/linkedin-default-background-cover.webp');
+  background-size: 100%;
   background-repeat: no-repeat;
-  /* background-position-y: -100%; */
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 @media screen and (min-width: 768px) {

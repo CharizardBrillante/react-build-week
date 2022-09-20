@@ -21,7 +21,7 @@ const Profile = () => {
           <ProfileMainArea user={user} />
         </Col>
         <Col md={5} lg={3}>
-          {/* <PeopleYouMayKnow/> */}
+          <PeopleYouMayKnow/>
         </Col>
       </Row>
     </Container>
