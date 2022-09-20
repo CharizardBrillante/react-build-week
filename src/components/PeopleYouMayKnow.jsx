@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import PeoplePreview from './PeoplePreview';
 
 const PeopleYouMayKnow = () => {
-    const people = useSelector(state => state.users.fetchedUsers['0'].slice(1, 6))
+    const people = useSelector(state => state.users.fetchedUsers['0']?.slice(1, 6))
     return (
         <ListGroup>
             <ListGroup.Item>
