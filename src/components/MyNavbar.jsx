@@ -21,12 +21,12 @@ function MyNavbar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link href="#features" id='link' path='/home' className='m-3 mt-1'><FaHome id='icon' size={25}/> <p>Home</p></Link>
-            <Link href="#pricing"  id='link' path='/home' className='m-3 mt-1'> <BsPeopleFill id='icon' size={25}/> <p>My Network</p></Link>
+            <Link href="#features" id='link' to='/home' className='m-3 mt-1'><FaHome id='icon' size={25}/> <p>Home</p></Link>
+            <Link href="#pricing"  id='link' to='/home' className='m-3 mt-1'> <BsPeopleFill id='icon' size={25}/> <p>My Network</p></Link>
           
-            <Link href="#deets"  id='link' path='/home' className='m-3 mt-1'> <MdWork id='icon' size={25}/> <p>Jobs</p></Link>
-            <Link id='link' href="#memes" path='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
-            <Link path='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
+            <Link href="#deets"  id='link' to='/home' className='m-3 mt-1'> <MdWork id='icon' size={25}/> <p>Jobs</p></Link>
+            <Link id='link' href="#memes" to='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
+            <Link to='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
 
 
             <div className='Me'>
