@@ -5,7 +5,6 @@
 
 .logo{
   width:40px;
-  margin-left: 10vw;
 }
 
 #link{
@@ -19,10 +18,25 @@
   color: #5f5f5fe1
 }
 
+#Account {
+  list-style-type: none;
+}
+
 .navbar{
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
+}
+
+#btnProfilo {
+  /*border-radius: 40%;*/
+  width: 13vw;
+  height: 35px;
+}
+
+.dropdown-menu.show{
+  width: 16vw;
+  padding:1em
 }
 
 /*----------------------- PEOPLE YOU MAY KNOW -----------------------------------*/

@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import {FaHome} from 'react-icons/fa';
+import {FaHome, FaSearch} from 'react-icons/fa';
 import {BsPeopleFill, BsGrid3X3GapFill} from 'react-icons/bs';
 import {MdWork, MdNotifications} from 'react-icons/md';
 import {AiFillMessage} from 'react-icons/ai';
@@ -12,9 +12,10 @@ import {Link} from 'react-router-dom'
 
 function MyNavbar() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="#fff" className='navbar'>
+  <Container>
+    <Navbar bg="#fff" className='navbar'>
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo linkedin" className='logo'/>
-      <Navbar.Brand href="#home" xs={5} className='ms-5'>React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand href="#home" xs={5} className='ms-5'><FaSearch/></Navbar.Brand>
       <Container className='ms-auto' id='Container'>
         <div className='contenitore ms-auto'>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -29,32 +30,25 @@ function MyNavbar() {
 
 
             <div className='Me'>
-            <CgProfile id='icon' size={25}/>
-            <NavDropdown title="Me" id="collasible-nav-dropdown">
-            
-              <div>
-                 <h3>username</h3>
-                 <p>Ultima esperienza lavorativa</p>
-                 <Button variant="outline-primary">Primary</Button>
-                 <NavDropdown.Divider />
-                 <h4>Account</h4>
-                 <ul id='Account'>
-                    <li><b>Try premium for free</b></li>
-                    <li>Settings & Privacy</li>
-                    <li>Help</li>
-                    <li>Language</li>
-                 </ul>
-              </div>
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+              <CgProfile id='icon' size={25}/>
+              <NavDropdown title="Me" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/1.1"><h3>username</h3></NavDropdown.Item>
+                <NavDropdown.Item href="#action/1.2">Ultima esperienza lavorativa</NavDropdown.Item>
+                <NavDropdown.Item href="#action/1.3">
+                  <Button variant="outline-primary rounded-pill" id='btnProfilo'>view profile</Button>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/2.1"><h4>Account</h4></NavDropdown.Item>
+                <NavDropdown.Item href="#action/2.2"><b>Try premium for free</b></NavDropdown.Item>
+                <NavDropdown.Item href="#action/2.3">Settings & Privacy</NavDropdown.Item> 
+                <NavDropdown.Item href="#action/2.4">Help</NavDropdown.Item>
+                <NavDropdown.Item href="#action/2.5">Language</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.1"><h4>Manage</h4></NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Posts & Activity</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Job Posting Account</NavDropdown.Item>
+                <NavDropdown.Divider />
+              </NavDropdown>
             </div>
 
 
@@ -78,6 +72,7 @@ function MyNavbar() {
         </div>
       </Container>
     </Navbar>
+    </Container>
   );
 }
 
