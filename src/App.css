@@ -24,7 +24,30 @@
   align-items: flex-start;
 }
 
+/*----------------------- PEOPLE YOU MAY KNOW -----------------------------------*/
 .people-preview img {
-  width: 80px;
+  width: 50px;
   border-radius: 50%;
+}
+.people-preview button {
+  color: var(--dark-gray)!important;
+  background: transparent !important;
+  border: 1px solid var(--dark-gray)!important;
+  border-radius: 5px!important;
+  margin: 0 !important;
+}
+.people-preview button:hover {
+  border: 2px solid var(--dark-gray)!important;
+  background: var(--light-gray) !important;
+}
+.people-preview h5 {
+  font-size: 1rem;
+  margin: 0.1rem !important;
+}
+.people-preview p {
+  font-size: 0.85rem;
+  margin: 0.1rem !important;
+}
+.text-left {
+  text-align: left!important;
 }
