@@ -3,6 +3,7 @@
   margin: 0 auto;
 }
 
+
 .logo{
   width:40px;
 }
@@ -38,7 +39,17 @@
   width: 16vw;
   padding:1em
 }
+/*----------------------- LOGIN --------------------------------*/
+.login-form {
+  width: 40vw!important;
+  margin-left: 30vw!important;
+  margin-top: 10vh!important;
+}
 
+.login-btn {
+  background-color: var(--linkedin-blue);
+  color: white;
+}
 /*----------------------- SEARCH BAR --------------------------------*/
 .search-bar {
   display: flex;
@@ -80,6 +91,15 @@
 }
 .text-left {
   text-align: left!important;
+}
+.people-btn {
+  color: var(--dark-gray) !important;
+  background: #fff!important;
+  border: 1px solid var(--light-gray)!important;
+  display: flex!important;
+  flex-flow: row nowrap!important;
+  align-items: center!important;
+  justify-content: center!important;
 }
 
 /*----------------------- PROFILE CARD -----------------------------------*/

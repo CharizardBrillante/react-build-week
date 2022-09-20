@@ -7,12 +7,17 @@ import {BsPeopleFill, BsGrid3X3GapFill} from 'react-icons/bs';
 import {MdWork, MdNotifications} from 'react-icons/md';
 import {AiFillMessage} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/cg';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import SearchBar from './SearchBar';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux';
+import {logoutAction} from '../redux/actions';
+import { Button } from 'react-bootstrap';
 
 function MyNavbar() {
   const loggedUser = useSelector(state => state.loggedUser.loggedUser)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
   <Container>
     <Navbar bg="#fff" className='navbar'>
@@ -25,7 +30,6 @@ function MyNavbar() {
             <Nav className="me-auto">
               <Link href="#features" id='link' to='/home' className='m-3 mt-1'><FaHome id='icon' size={25}/> <p>Home</p></Link>
               <Link href="#pricing"  id='link' to='/home' className='m-3 mt-1'> <BsPeopleFill id='icon' size={25}/> <p>My Network</p></Link>
-            
               <Link href="#deets"  id='link' to='/home' className='m-3 mt-1'> <MdWork id='icon' size={25}/> <p>Jobs</p></Link>
               <Link id='link' href="#memes" to='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
               <Link to='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
@@ -51,10 +55,14 @@ function MyNavbar() {
                   <NavDropdown.Item href="#action/3.2">Posts & Activity</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Job Posting Account</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/4.1">Sign Out</NavDropdown.Item>
+                  <NavDropdown.Item onClick={()=>{
+                    dispatch(logoutAction());
+                    navigate('/')}}>
+                      Sign Out
+                    </NavDropdown.Item>
                 </NavDropdown>
               </div>
-                ) : < Link to='/login'>login</Link>
+                ) : < Link to='/login'><Button className='login-btn'>Login</Button></Link>
               }
               
 
