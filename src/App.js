@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
+import Login from "./components/Login";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ function App() {
         <MyNavbar />
         <Routes>
           <Route path="/user/:id" element={<Profile />} />
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </div>
     </BrowserRouter>

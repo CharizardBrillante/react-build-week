@@ -10,7 +10,7 @@ const PeopleYouMayKnow = () => {
                 <h4>People you may know</h4>
             </ListGroup.Item>
             
-            {people.map(user => (
+            {people?.map(user => (
                 <ListGroup.Item key={user._id}>
                     <PeoplePreview
                         imgUrl={user.image}
