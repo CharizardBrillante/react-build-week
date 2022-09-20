@@ -28,3 +28,39 @@
   width: 80px;
   border-radius: 50%;
 }
+
+.main-profile-card {
+  background-image: url('../public/assets/linkedin-default-background-cover.webp');
+  background-repeat: no-repeat;
+  /* background-position-y: -100%; */
+}
+
+@media screen and (min-width: 768px) {
+  .main-profile-card {
+    padding: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main-profile-card {
+    padding-top: 85px;
+  }
+}
+
+.main-profile-card h1 {
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.main-profile-card button {
+  font-weight: bold;
+}
+
+.btn-follow {
+  background-color: #0077B5;
+}
+
+.btn-msg {
+  border: 1px solid #0077B5;
+  color: #0077B5;
+}

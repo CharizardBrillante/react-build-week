@@ -7,7 +7,7 @@ import ProfileMainArea from "./ProfileMainArea";
 
 const Profile = () => {
   const params = useParams();
-  const user = useSelector(state => state.users.fetchedUsers.filter(el => el._id === params.id)[0]);
+  const user = useSelector(state => state.users.fetchedUsers[0]?.filter(el => el._id === params.id)[0]);
 
   useEffect(() => {
     console.log('user: ',user);
@@ -21,7 +21,7 @@ const Profile = () => {
           <ProfileMainArea user={user} />
         </Col>
         <Col md={5} lg={3}>
-          <PeopleYouMayKnow/>
+          {/* <PeopleYouMayKnow/> */}
         </Col>
       </Row>
     </Container>
