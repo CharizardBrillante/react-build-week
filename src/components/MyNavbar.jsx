@@ -9,13 +9,14 @@ import {MdWork, MdNotifications} from 'react-icons/md';
 import {AiFillMessage} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/cg';
 import {Link} from 'react-router-dom'
+import SearchBar from './SearchBar';
 
 function MyNavbar() {
   return (
   <Container>
     <Navbar bg="#fff" className='navbar'>
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo linkedin" className='logo'/>
-      <Navbar.Brand href="#home" xs={5} className='ms-5'><FaSearch/></Navbar.Brand>
+      <Navbar.Brand xs={5} className='ms-5'><SearchBar/></Navbar.Brand>
       <Container className='ms-auto' id='Container'>
         <div className='contenitore ms-auto'>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -39,6 +39,20 @@
   padding:1em
 }
 
+/*----------------------- SEARCH BAR --------------------------------*/
+.search-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.search-icon {
+  margin-bottom: 1em;
+  margin-right: 1em;
+}
+.search-list-item {
+  cursor: pointer!important;
+}
 /*----------------------- PEOPLE YOU MAY KNOW -----------------------------------*/
 .people-preview img {
   width: 50px;

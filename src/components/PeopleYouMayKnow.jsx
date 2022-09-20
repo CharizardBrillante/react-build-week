@@ -28,7 +28,8 @@ const PeopleYouMayKnow = () => {
                         <PeoplePreview
                             imgUrl={user.image}
                             name={`${user.name} ${user.surname}`}
-                            workPosition={user.title}/>                        
+                            workPosition={user.title}
+                            id={user._id}/>                        
                     </ListGroup.Item>
                 )) }
         </ListGroup>

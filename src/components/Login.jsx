@@ -15,11 +15,12 @@ const Login = () => {
         console.log('users to login:', users)
         e.preventDefault();
         setLoggedUser(users.filter(u => u.email === email)[0]);
-        dispatch(loginAction(loggedUser));
+        
         console.log('logged in:',loggedUser);        
     }
 
     if (loggedUser) {
+        dispatch(loginAction(loggedUser));
         navigate(`/user/${loggedUser._id}`);
     }
     return (
