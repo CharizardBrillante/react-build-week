@@ -6,7 +6,7 @@ const PeoplePreview = (props) => {
         <Container className="people-preview">
             <Row>
                 <Col className="mx-0">
-                    <img src={props.imgUrl} alt={`${props.name}'s profile image`}/>
+                    <img src={props.imgUrl} alt={`${props.name}'s profile`}/>
                 </Col>
                 <Col className="mx-0">
                     <h5>{props.name}</h5>
