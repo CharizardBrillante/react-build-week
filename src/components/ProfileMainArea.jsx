@@ -3,7 +3,7 @@ import { Button, Col, Row } from "react-bootstrap";
 const ProfileMainArea = ({ user }) => {
   return (
     <>
-      <Row className="main-profile-card rounded-3 border border-1 border-muted">
+      <Row className="main-profile-card rounded-3 border border-1 border-muted mb-2">
         <Col>
           <div className="img-wrapper text-start">
             <img

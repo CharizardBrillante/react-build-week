@@ -9,7 +9,7 @@ const experiencesReducer = (state = initialState, action) => {
     case GET_EXPERIENCES:
       return {
         ...state,
-        fetchedUserExperiences: [...state.fetchedUserExperiences, action.payload]
+        fetchedUserExperiences: action.payload
       }
     default:
       return state;
