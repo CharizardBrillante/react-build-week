@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -9,8 +8,10 @@ import {MdWork, MdNotifications} from 'react-icons/md';
 import {AiFillMessage} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/cg';
 import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 function MyNavbar() {
+  const loggedUser = useSelector(state => state.loggedUser.loggedUser)
   return (
   <Container>
     <Navbar bg="#fff" className='navbar'>
@@ -28,14 +29,15 @@ function MyNavbar() {
             <Link id='link' href="#memes" to='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
             <Link to='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
 
-
-            <div className='Me'>
+            {
+              loggedUser ? (
+                <div className='Me'>
               <CgProfile id='icon' size={25}/>
               <NavDropdown title="Me" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/1.1"><h3>username</h3></NavDropdown.Item>
                 <NavDropdown.Item href="#action/1.2">Ultima esperienza lavorativa</NavDropdown.Item>
                 <NavDropdown.Item href="#action/1.3">
-                  <Button variant="outline-primary rounded-pill" id='btnProfilo'>view profile</Button>
+                  <Link to={`/user/${loggedUser._id}`} variant="outline-primary rounded-pill" id='btnProfilo'>view profile</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/2.1"><h4>Account</h4></NavDropdown.Item>
@@ -50,6 +52,9 @@ function MyNavbar() {
                 <NavDropdown.Divider />
               </NavDropdown>
             </div>
+              ) : < Link to='/login'>login</Link>
+            }
+            
 
 
             <div className='border-start border-secondary h-50'>
