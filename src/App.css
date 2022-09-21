@@ -143,14 +143,16 @@
   color: #0077B5;
 }
 
-.action-icon-container {
+.action-icon-container,
+.profile-edit-icon-container {
   width: 48px;
   height: 48px;
   position: relative;
   border-radius: 50%;
 }
 
-.add-el-icon {
+.add-el-icon,
+.profile-edit-icon {
   font-size: 25px;
   position: absolute;
   top: -4%;
@@ -162,7 +164,8 @@
   transform: translateY(-6%);
 }
 
-.action-icon-container:hover{
+.action-icon-container:hover,
+.profile-edit-icon-container:hover{
   background-color: lightgrey;
 }
 
