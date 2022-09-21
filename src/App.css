@@ -94,3 +94,44 @@
 .text-left {
   text-align: left!important;
 }
+
+
+
+/*------------------------Footer---------------------------------*/
+
+.footer {
+  background-color: white;
+  padding: 70px 0;
+}
+
+.footer_container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.footer_row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+.footer_links ul {
+    list-style: none;
+    padding: 0 30px;
+}
+
+.footer_links ul li a {
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #86888A;
+    font-weight: 500;
+    display: block;
+    text-align: left;
+}
+
+.footer_links ul li a:hover {
+  text-decoration: underline;
+  color:mediumblue;
+}

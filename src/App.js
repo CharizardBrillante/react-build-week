@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
+import Footer from "./components/Footer";
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function App() {
         <Routes>
           <Route path="/user/:id" element={<Profile />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
