@@ -2,14 +2,18 @@ import { Col, Row } from "react-bootstrap";
 import SingleExperience from "./SingleExperience";
 import { BsPlusLg } from "react-icons/bs";
 import ExperiencesModal from "./ExperienceModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Experiences = ({ experiences }) => {
+const Experiences = (props) => {
   const [expToEdit, setExpToEdit] = useState(null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    console.log(props);
+  }, [])
 
   return (
     <>
@@ -35,7 +39,7 @@ const Experiences = ({ experiences }) => {
               </span>
             </div>
           </div>
-          {experiences.map((exp, i) => (
+          {props.experiences.map((exp, i) => (
             <SingleExperience
               key={i}
               experience={exp}
@@ -46,7 +50,7 @@ const Experiences = ({ experiences }) => {
           ))}
         </Col>
       </Row>
-      <ExperiencesModal show={show} onClose={handleClose} expToEdit={expToEdit}/>
+      <ExperiencesModal show={show} onClose={handleClose} expToEdit={expToEdit} fetchExperiences={props.fetchExperiences}/>
     </>
   );
 };

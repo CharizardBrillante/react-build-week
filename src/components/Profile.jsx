@@ -19,8 +19,8 @@ const Profile = () => {
 
   useEffect(() => {
     //console.log("user: ", user);
-    fetchExperiences(params.id);
-  }, [user]);
+    experiences.length === 0 && fetchExperiences(params.id);
+  }, [user, experiences]);
 
   const fetchExperiences = async (id) => {
     try {
@@ -52,7 +52,7 @@ const Profile = () => {
       <Row>
         <Col md={7} lg={9}>
           <ProfileMainArea user={user} />
-          <Experiences experiences={experiences} />
+          <Experiences experiences={experiences} fetchExperiences={fetchExperiences} />
         </Col>
         <Col md={5} lg={3}>
           <PeopleYouMayKnow />

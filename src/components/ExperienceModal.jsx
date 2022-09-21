@@ -46,7 +46,10 @@ const ExperiencesModal = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    submitFormExperience();
+    props.expToEdit ? submitFormExperience(params.id) : submitFormExperience(-1)
+    setTimeout(() => {
+      props.fetchExperiences(params.id)
+    }, 2000);
   };
 
   useEffect(() => {
