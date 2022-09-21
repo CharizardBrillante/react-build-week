@@ -7,32 +7,32 @@ const Footer = () => {
             <div className="footer_links">
               <ul>
                 <li>
-                  <a href="">Informazioni</a>
+                  <a href="">About</a>
                 </li>
                 <li>
-                  <a href="">Linee guida della community</a>
+                  <a href="">Community Guidelines</a>
                 </li>
                 <li>
-                  <a href="">Privacy e condizioni</a>
+                  <a href="">Privacy & Terms </a>
                 </li>
                 <li>
                   <a href="">Sales Solutions</a>
                 </li>
                 <li>
-                  <a href="">Centro sicurezza</a>
+                  <a href="">Safety Center</a>
                 </li>
               </ul>
             </div>
             <div className="footer_links">
               <ul>
                 <li>
-                  <a href="">Accessibilità</a>
+                  <a href="">Accessibility</a>
                 </li>
                 <li>
-                  <a href="">Carriera</a>
+                  <a href="">Careers</a>
                 </li>
                 <li>
-                  <a href="">Opzioni di annuncio</a>
+                  <a href="">Ad Choices</a>
                 </li>
                 <li>
                   <a href="">Mobile</a>
@@ -45,13 +45,13 @@ const Footer = () => {
                   <a href="">Talent Solutions</a>
                 </li>
                 <li>
-                  <a href="">Soluzioni di marketing</a>
+                  <a href="">Marketing Solutions</a>
                 </li>
                 <li>
-                  <a href="">Publicità</a>
+                  <a href="">Advertising</a>
                 </li>
                 <li>
-                  <a href="">Piccole imprese</a>
+                  <a href="">Small Business</a>
                 </li>
               </ul>
             </div>
