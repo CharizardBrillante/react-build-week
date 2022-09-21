@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
+import Home from "./components/Home";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <div className="App">
         <MyNavbar />
         <Routes>
+          <Route path='/' element={<Home/>}/>
           <Route path="/user/:id" element={<Profile />} />
           <Route path='/login' element={<Login/>}/>
         </Routes>
