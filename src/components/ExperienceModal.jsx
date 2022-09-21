@@ -1,40 +1,55 @@
-import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
 const ExperiencesModal = (props) => {
-  /* const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true); */
-  //const { show, onClose } = props;
-
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-
       <Modal show={props.show} onHide={props.onClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Add New Experience</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label>Role</Form.Label>
               <Form.Control
-                type="email"
-                placeholder="name@example.com"
+                type="text"
+                placeholder="Es: CEO, CTO, Founder etc..."
                 autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label>Company</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Company name..."
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label>Location</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Insert company location"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label>Start Date</Form.Label>
+              <Form.Control
+                type="date"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="">
+              <Form.Label>End Date</Form.Label>
+              <Form.Control
+                type="date"
               />
             </Form.Group>
             <Form.Group
               className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
+              controlId=""
             >
-              <Form.Label>Example textarea</Form.Label>
+              <Form.Label>Description</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
           </Form>
