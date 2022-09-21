@@ -150,13 +150,16 @@
   border-radius: 50%;
 }
 
-.add-el-icon,
-.upd-el-icon {
+.add-el-icon {
   font-size: 25px;
   position: absolute;
   top: -4%;
   left: 0%;
   transform: translate(50%, 50%);
+}
+
+.upd-el-icon {
+  transform: translateY(-6%);
 }
 
 .action-icon-container:hover{

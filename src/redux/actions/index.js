@@ -1,6 +1,7 @@
 export const GET_USERS = "GET_USERS";
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const NEW_EXPERIENCE = "NEW_EXPERIENCE";
+export const EDIT_EXPERIENCE = "EDIT_EXPERIENCE";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
@@ -16,6 +17,11 @@ export const getExperiencesAction = (exp) => ({
 
 export const newExperienceAction = (exp) => ({
   type: NEW_EXPERIENCE,
+  payload: exp
+})
+
+export const editExperienceAction = (exp) => ({
+  type: EDIT_EXPERIENCE,
   payload: exp
 })
 
