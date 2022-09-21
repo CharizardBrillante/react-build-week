@@ -7,11 +7,14 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
+import Login from "./components/Login";
+import Home from "./components/Home";
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     getUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getUsers = () => {
@@ -34,9 +37,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <MyNavbar />
+        <MyNavbar/>
         <Routes>
+          <Route path='/' element={<Home/>}/>
           <Route path="/user/:id" element={<Profile />} />
+          <Route path='/login' element={<Login/>}/>
         </Routes>
       </div>
     </BrowserRouter>
