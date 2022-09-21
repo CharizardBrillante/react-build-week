@@ -261,3 +261,34 @@
   color: #0077B5;
 }
 
+/*----------------------- SIDEBAR CARD -----------------------------------*/
+
+#imgSidebar {
+  border-radius: 50%;
+
+}
+
+#crdsd{
+  text-align: left;
+}
+
+.card-header{
+  padding: 0;
+}
+
+.imgsideprofile {
+  margin-bottom: -40px;
+  width: 100%;
+  height: 70px;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+.card{
+  border-radius: 10%;
+}
+
+ul, #li{
+  color: #0077B5;
+  list-style-type: none;
+}

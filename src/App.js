@@ -10,15 +10,13 @@ import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Home from "./components/Home";
 
-
 function App() {
-
-
+  const dispatch = useDispatch();
   useEffect(() => {
     getUsers();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const dispatch = useDispatch();
+
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       method: "GET",
@@ -39,7 +37,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <MyNavbar />
+        <MyNavbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path="/user/:id" element={<Profile />} />
