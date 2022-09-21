@@ -20,7 +20,6 @@ const Profile = () => {
   useEffect(() => {
     //console.log("user: ", user);
     fetchExperiences(params.id);
-    console.log("experiences: ", experiences);
   }, [user]);
 
   const fetchExperiences = async (id) => {
