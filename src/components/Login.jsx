@@ -15,15 +15,16 @@ const Login = () => {
         console.log('users to login:', users)
         e.preventDefault();
         setLoggedUser(users.filter(u => u.email === email)[0]);
-        dispatch(loginAction(loggedUser));
+        
         console.log('logged in:',loggedUser);        
     }
 
     if (loggedUser) {
+        dispatch(loginAction(loggedUser));
         navigate(`/user/${loggedUser._id}`);
     }
     return (
-        <Form onSubmit={login}>
+        <Form onSubmit={login} className="login-form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control 
@@ -32,7 +33,7 @@ const Login = () => {
                     value={email}
                     onChange={e=>setEmail(e.target.value)} />
             </Form.Group>
-            <Button type='submit'>Login</Button>
+            <Button type='submit' className='login-btn'>Login</Button>
         </Form>
     )
 };

@@ -9,13 +9,15 @@ import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 
+
 function App() {
-  const dispatch = useDispatch();
+
+
   useEffect(() => {
     getUsers();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  const dispatch = useDispatch();
   const getUsers = () => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/", {
       method: "GET",

@@ -7,16 +7,22 @@ import {BsPeopleFill, BsGrid3X3GapFill} from 'react-icons/bs';
 import {MdWork, MdNotifications} from 'react-icons/md';
 import {AiFillMessage} from 'react-icons/ai';
 import {CgProfile} from 'react-icons/cg';
-import {Link} from 'react-router-dom'
-import {useSelector} from 'react-redux'
+import {Link, useNavigate} from 'react-router-dom'
+import SearchBar from './SearchBar';
+import {useSelector, useDispatch} from 'react-redux';
+import {logoutAction} from '../redux/actions';
+import { Button } from 'react-bootstrap';
 
 function MyNavbar() {
   const loggedUser = useSelector(state => state.loggedUser.loggedUser)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   return (
   <Container>
     <Navbar bg="#fff" className='navbar'>
       <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="logo linkedin" className='logo'/>
-      <Navbar.Brand href="#home" xs={5} className='ms-5'><FaSearch/></Navbar.Brand>
+      <Navbar.Brand xs={5} className='ms-5'><SearchBar/></Navbar.Brand>
       <Container className='ms-auto' id='Container'>
         <div className='contenitore ms-auto'>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -24,7 +30,6 @@ function MyNavbar() {
             <Nav className="me-auto">
               <Link href="#features" id='link' to='/home' className='m-3 mt-1'><FaHome id='icon' size={25}/> <p>Home</p></Link>
               <Link href="#pricing"  id='link' to='/home' className='m-3 mt-1'> <BsPeopleFill id='icon' size={25}/> <p>My Network</p></Link>
-            
               <Link href="#deets"  id='link' to='/home' className='m-3 mt-1'> <MdWork id='icon' size={25}/> <p>Jobs</p></Link>
               <Link id='link' href="#memes" to='/home' className='m-3 mt-1'> <AiFillMessage id='icon' size={25}/> <p>Messaging</p></Link>
               <Link to='/home'  id='link' className='m-3 mt-1'><MdNotifications id='icon' size={25}/> <p>Notifications</p></Link>
@@ -50,10 +55,14 @@ function MyNavbar() {
                   <NavDropdown.Item href="#action/3.2">Posts & Activity</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Job Posting Account</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/4.1">Sign Out</NavDropdown.Item>
+                  <NavDropdown.Item onClick={()=>{
+                    dispatch(logoutAction());
+                    navigate('/')}}>
+                      Sign Out
+                    </NavDropdown.Item>
                 </NavDropdown>
               </div>
-                ) : < Link to='/login'>login</Link>
+                ) : < Link to='/login'><Button className='login-btn'>Login</Button></Link>
               }
               
 
@@ -68,7 +77,7 @@ function MyNavbar() {
                   </div>
                   <div>
                     <NavDropdown.Item href="#action/1.3">
-                    <Link to={`/user/${loggedUser._id}`} variant="outline-primary rounded-pill" id='btnProfilo'>view profile</Link>
+                    <Link to={`/user/${loggedUser?._id}`} variant="outline-primary rounded-pill" id='btnProfilo'>view profile</Link>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action/2.1"><h4>LinkedIn Business Services</h4></NavDropdown.Item>

@@ -1,6 +1,7 @@
 export const GET_USERS = "GET_USERS";
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
 
 export const getUsersAction = (users) => ({
     type: GET_USERS,
@@ -12,7 +13,12 @@ export const getExperiencesAction = (exp) => ({
   payload: exp
 })
 
-export const loginAction = (usr) => ({
+export const loginAction = (user) => ({
   type: LOGIN,
-  payload: usr
+  payload: user
+})
+
+export const logoutAction = () => ({
+    type: LOGOUT,
+    payload: null
 })
