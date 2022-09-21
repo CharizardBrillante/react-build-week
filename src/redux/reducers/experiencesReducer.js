@@ -1,7 +1,16 @@
-import { GET_EXPERIENCES } from "../actions";
+import { GET_EXPERIENCES, NEW_EXPERIENCE } from "../actions";
 
 const initialState = {
-  fetchedUserExperiences: []
+  fetchedUserExperiences: [],
+  newExperience: {
+    role: "",
+    company: "",
+    area: "",
+    startDate: "",
+    endDate: "",
+    description: "",
+    username: ""
+  }
 }
 
 const experiencesReducer = (state = initialState, action) => {
@@ -9,8 +18,16 @@ const experiencesReducer = (state = initialState, action) => {
     case GET_EXPERIENCES:
       return {
         ...state,
-        fetchedUserExperiences: [...state.fetchedUserExperiences, action.payload]
+        fetchedUserExperiences: action.payload
       }
+      case NEW_EXPERIENCE:
+        return {
+          ...state,
+          newExperience: {
+            ...state.newExperience,
+            ...action.payload
+          }
+        }
     default:
       return state;
   }

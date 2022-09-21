@@ -143,3 +143,49 @@
   color: #0077B5;
 }
 
+.action-icon-container {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  border-radius: 50%;
+}
+
+.add-el-icon,
+.upd-el-icon {
+  font-size: 25px;
+  position: absolute;
+  top: -4%;
+  left: 0%;
+  transform: translate(50%, 50%);
+}
+
+.action-icon-container:hover{
+  background-color: lightgrey;
+}
+
+.people-preview button {
+  color: var(--dark-gray)!important;
+  background: transparent !important;
+  border: 1px solid var(--dark-gray)!important;
+  border-radius: 5px!important;
+  margin: 0 !important;
+}
+.people-preview button:hover {
+  border: 2px solid var(--dark-gray)!important;
+  background: var(--light-gray) !important;
+}
+.people-preview h5 {
+  font-size: 1rem;
+  margin: 0.1rem !important;
+}
+.people-preview p {
+  font-size: 0.85rem;
+  margin: 0.1rem !important;
+}
+.text-left {
+  text-align: left!important;
+}
+
+.info-wrapper {
+  padding: 20px;
+}
