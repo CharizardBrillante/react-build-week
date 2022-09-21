@@ -125,7 +125,7 @@
     margin-bottom: 10px;
     font-size: 13px;
     text-decoration: none;
-    color: #86888A;
+    color: #66686b;
     font-weight: 500;
     display: block;
     text-align: left;
@@ -134,4 +134,22 @@
 .footer_links ul li a:hover {
   text-decoration: underline;
   color:mediumblue;
+}
+
+#questions {
+  font-weight:bolder;
+}
+
+.footer_links ul li p {
+  font-size: 12px;
+  text-align: left;
+}
+
+.copyright {
+  text-align: left;
+  margin: auto;
+  max-width: 1170px;
+  padding: 0 30px;
+  font-size: 12px;
+  color: #86888A;
 }
