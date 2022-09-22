@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { EDIT_EXPERIENCE, GET_USERS, NEW_EXPERIENCE } from "../redux/actions";
+import { EDIT_EXPERIENCE, NEW_EXPERIENCE } from "../redux/actions";
 
 const ExperiencesModal = (props) => {
   const params = useParams();
