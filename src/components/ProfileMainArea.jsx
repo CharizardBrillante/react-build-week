@@ -52,7 +52,7 @@ const ProfileMainArea = (props) => {
           </div>
         </Col>
       </Row>
-      <EditProfileModal show={show} onClose={handleClose} user={props.user} getUsers={props.getUsers} />
+      <EditProfileModal show={show} onClose={handleClose} user={props.user} />
     </>
   );
 };

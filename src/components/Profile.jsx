@@ -51,7 +51,7 @@ const Profile = (props) => {
     <Container>
       <Row>
         <Col md={7} lg={9}>
-          <ProfileMainArea user={user} getUsers={props.getUsers} />
+          <ProfileMainArea user={user} />
           <Experiences experiences={experiences} fetchExperiences={fetchExperiences} />
         </Col>
         <Col md={5} lg={3}>

@@ -20,9 +20,6 @@ const EditProfileModal = (props) => {
     e.preventDefault();
     console.log(formData);
     submitUserChanges();
-    setTimeout(() => {
-      props.getUsers();
-    }, 2000);
   };
 
   const submitUserChanges = async () => {
