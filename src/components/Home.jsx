@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Home = () => {
     const loggedUser = useSelector(state => state.loggedUser.loggedUser);
-
+    
     return (
         <Container fluid>
             <Row>

@@ -3,8 +3,10 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 const Comment = (props) => {
-    const user = useSelector(state => state.loggedUser.loggedUser)
+    const user = useSelector(state => state.loggedUser.loggedUser);
+    const token = useSelector(state => state.loggedUser.token);
     const [comment, setComment] = useState('');
+    const loggedUser = useSelector(state => state.loggedUser.loggedUser);
 
     const postComment = (data = {}) => {
         const options = {
@@ -12,7 +14,7 @@ const Comment = (props) => {
             headers: {
             "Content-Type": "application/json",
             "Authorization":
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWJkZjZkNzlhNTAwMTUwOTAyZWUiLCJpYXQiOjE2NjM1NzI5NjAsImV4cCI6MTY2NDc4MjU2MH0.TBiQ1Cyg8H0ysQhW1CxyB80Nbf5EaV0yPUj6tU2R9zQ",
+                `Bearer ${token}`,
             },
             body: JSON.stringify(data)
         }
@@ -34,6 +36,7 @@ const Comment = (props) => {
 
 
     return (
+        <>{loggedUser &&
         <Card className='new-post-card'>
         <Card.Body>
         <Card.Title className='post-header'>
@@ -52,6 +55,7 @@ const Comment = (props) => {
         </Card.Title>
         </Card.Body>
         </Card>
+        }</>
     )
 }
 

@@ -1,14 +1,14 @@
-import {FaHome } from 'react-icons/fa';
-import {BsPeopleFill, BsGrid3X3GapFill} from 'react-icons/bs';
-import {MdWork, MdNotifications} from 'react-icons/md';
-import {AiFillMessage} from 'react-icons/ai';
-import {Link, useNavigate} from 'react-router-dom'
-import SearchBar from './SearchBar';
-import {useSelector, useDispatch} from 'react-redux';
-import {logoutAction} from '../redux/actions';
 import { Button, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import NavOffCanvas from './NavOffCanvas';
+import { FaHome } from 'react-icons/fa';
+import { BsPeopleFill, BsGrid3X3GapFill } from 'react-icons/bs';
+import { MdWork, MdNotifications } from 'react-icons/md';
+import { AiFillMessage } from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { logoutAction } from '../redux/actions';
+import NavOffCanvas from './NavOffCanvas';
+import SearchBar from './SearchBar';
 
 const MyNavbar = () => {
   const loggedUser = useSelector(state => state.loggedUser.loggedUser)

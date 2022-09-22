@@ -5,18 +5,19 @@ import { MdOutlineEvent } from 'react-icons/md';
 import { RiArticleLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import ImgUploader from './imgUploader';
 
 const NewPostCard = () => {
-    const user = useSelector(state => state.loggedUser.loggedUser)
+    const user = useSelector(state => state.loggedUser.loggedUser);
+    const token = useSelector(state => state.loggedUser.token);
     const [postContent, setPostContent] = useState('');
 
     const post = (data = {}) => {
         const options = {
             method: "POST",
             headers: {
-            "Content-Type": "application/json",
-            "Authorization":
-                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWJkZjZkNzlhNTAwMTUwOTAyZWUiLCJpYXQiOjE2NjM1NzI5NjAsImV4cCI6MTY2NDc4MjU2MH0.TBiQ1Cyg8H0ysQhW1CxyB80Nbf5EaV0yPUj6tU2R9zQ",
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${token}`            
             },
             body: JSON.stringify(data)
         }
@@ -61,7 +62,16 @@ const NewPostCard = () => {
 
             </Card.Title>
             <Card.Text className='post-buttons'>
-                <span className='post-btn'><BsCardImage size={25} color='blue' className='mx-1'/> Photo</span>
+                <span className='post-btn'>
+                    <ImgUploader //PROPS : section, experience, expId, mainId, size, color
+                        section='posts'
+                        experience={false}
+                        mainId={1}
+                        size={25}
+                        color="green"
+                    /> 
+                    Photo
+                </span>
                 <span className='post-btn'><BsFillPlayBtnFill size={25} color='green' className='mx-1'/> Video </span>
                 <span className='post-btn'><MdOutlineEvent size={25} color='yellow' className='mx-1'/> Event </span>
                 <span className='post-btn'><RiArticleLine size={25} color='orange' className='mx-1'/> Write Article </span>
