@@ -1,7 +1,8 @@
-import { LOGIN, LOGOUT } from "../actions";
+import { LOGIN, LOGOUT, SAVE_TOKEN } from "../actions";
 
 const initialState = {
-  loggedUser: null
+  loggedUser: null,
+  token : ''
 }
 
 const loggedUserReducer = (state = initialState, action) => {
@@ -15,6 +16,11 @@ const loggedUserReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedUser: action.payload
+      }
+    case SAVE_TOKEN:
+      return {
+        ...state,
+        token : action.payload
       }
     default:
       return state;

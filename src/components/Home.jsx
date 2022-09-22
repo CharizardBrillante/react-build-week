@@ -7,7 +7,7 @@ import CartaProfilo from './CartaProfilo';
 
 const Home = () => {
     const loggedUser = useSelector(state => state.loggedUser.loggedUser);
-
+    
     return (
         <Container fluid>
             <Row>
@@ -15,7 +15,6 @@ const Home = () => {
                 {loggedUser && <CartaProfilo/>}
                 </Col>
                 <Col lg={6}>
-                    {loggedUser && <NewPostCard/>}
                     <News/>
                 </Col>
                 <Col lg={3}>

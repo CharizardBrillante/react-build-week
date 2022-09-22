@@ -13,6 +13,7 @@ import Home from "./components/Home";
 function App() {
 
   const dispatch = useDispatch();
+  const token = useSelector(state => state.loggedUser.token);
   useEffect(() => {
     getUsers();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,7 +25,7 @@ function App() {
       headers: {
         Accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWJkZjZkNzlhNTAwMTUwOTAyZWUiLCJpYXQiOjE2NjM1NzI5NjAsImV4cCI6MTY2NDc4MjU2MH0.TBiQ1Cyg8H0ysQhW1CxyB80Nbf5EaV0yPUj6tU2R9zQ",
+        `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzJjMTZiOTM0ZDQ0ODAwMTVmZDY5MTIiLCJpYXQiOjE2NjM4MzUyNjUsImV4cCI6MTY2NTA0NDg2NX0.UUF4IRbf2rKB0s63nN5cBEcxOLwxARxCI5d96qs8Iss`      
       },
     })
       .then((res) => res.json())
