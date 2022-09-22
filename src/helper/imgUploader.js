@@ -1,10 +1,19 @@
 export const imgUploader = (selectedFile, token, section, mainId, callback, experience, expId) => {
     
-
+    const getDataType = () => {
+        switch (section) {
+            case "experiences":
+                return "experience";
+            case "posts":
+                return "post";
+            default: 
+                return section;
+        }
+    }
     const expUrl = `experiences/${expId}`;
     const picture = section!=='posts'? '/picture' : '';
     const formData = new FormData();
-    formData.append('post', selectedFile);
+    formData.append(getDataType(), selectedFile);
     const options = {
         method: "POST",
         headers: {

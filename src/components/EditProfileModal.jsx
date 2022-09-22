@@ -4,10 +4,14 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { EDIT_USER, UPDATE_FETCHED_USERS } from "../redux/actions";
+import { imgUploader } from "../helper/imgUploader";
 
 const EditProfileModal = (props) => {
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.users.userChanges);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const token = useSelector((state) => state.loggedUser.token);
+  const loggedUser = useSelector(state => state.loggedUser.loggedUser);
 
   const handleChange = (e) => {
     dispatch({
@@ -42,6 +46,7 @@ const EditProfileModal = (props) => {
           type: UPDATE_FETCHED_USERS,
           payload: res
         })
+        if(selectedFile)imgUploader(selectedFile, token, 'profile', loggedUser?._id)
       } else {
         console.log("error");
       }
@@ -72,6 +77,14 @@ const EditProfileModal = (props) => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit} id="edit-profile-form">
+            <Form.Group>
+              <Form.Label>Profile Image</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={e => setSelectedFile(e.target.files[0])}
+              />
+            </Form.Group>
+              
             <Form.Group className="mb-3" controlId="">
               <Form.Label>Name</Form.Label>
               <Form.Control

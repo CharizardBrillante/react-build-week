@@ -20,7 +20,7 @@ const Profile = (props) => {
   useEffect(() => {
     //console.log("user: ", user);
     experiences.length === 0 && fetchExperiences(params.id);
-  }, [user, experiences]);
+  }, [/* user, experiences */]);
 
   const fetchExperiences = async (id) => {
     try {
