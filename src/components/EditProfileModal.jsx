@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { EDIT_USER } from "../redux/actions";
+import { EDIT_USER, UPDATE_FETCHED_USERS } from "../redux/actions";
 
 const EditProfileModal = (props) => {
   const dispatch = useDispatch();
@@ -38,7 +38,10 @@ const EditProfileModal = (props) => {
       );
 
       if (res.ok) {
-        console.log(res);
+        dispatch({
+          type: UPDATE_FETCHED_USERS,
+          payload: res
+        })
       } else {
         console.log("error");
       }

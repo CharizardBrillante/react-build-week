@@ -4,15 +4,13 @@ import MyNavbar from "./components/MyNavbar";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getUsersAction } from "./redux/actions";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 
 
 function App() {
-
-
   useEffect(() => {
     getUsers();
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -29,7 +27,7 @@ function App() {
     })
       .then((res) => res.json())
       .then((res) => {
-        //console.log('users: ',res);
+        console.log('users: ',res);
         dispatch(getUsersAction(res));
       })
       .catch((err) => console.error(err));

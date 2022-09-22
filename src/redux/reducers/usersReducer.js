@@ -1,4 +1,4 @@
-import { EDIT_USER, GET_USERS } from "../actions";
+import { EDIT_USER, GET_USERS, UPDATE_FETCHED_USERS } from "../actions";
 
 const initialState = {
   fetchedUsers: [],
@@ -19,6 +19,21 @@ const usersReducer = (state = initialState, action) => {
         ...state,
         fetchedUsers: [...state.fetchedUsers, action.payload],
       };
+    case UPDATE_FETCHED_USERS: {
+      return {
+        ...state,
+        fetchedUsers: [
+          ...state.fetchedUsers,
+          (state.fetchedUsers[
+            state.fetchedUsers[
+              state.fetchedUsers.indexOf(
+                state.fetchedUsers.filter((el) => el._id === action.payload._id)
+              )
+            ]
+          ] = action.payload),
+        ],
+      };
+    }
     case EDIT_USER:
       return {
         ...state,
