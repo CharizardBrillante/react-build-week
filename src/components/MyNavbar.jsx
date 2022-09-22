@@ -29,19 +29,19 @@ const MyNavbar = () => {
         <Navbar.Collapse>
           <Nav className="nav-anchors">
             <Link to='/'><FaHome color='gray' size={25}/>
-              <div>Home</div>
+              <p>Home</p>
             </Link>
             <Link to='/'> <BsPeopleFill color='gray' size={25}/>
-              <div>My Network</div>
+              <p>My Network</p>
             </Link>
             <Link to='/'> <MdWork color='gray' size={25}/>
-              <div>Jobs</div>
+              <p>Jobs</p>
             </Link>
             <Link to='/'> <AiFillMessage color='gray' size={25}/>
-              <div>Messaging</div>
+              <p>Messaging</p>
             </Link>
             <Link to='/'><MdNotifications color='gray' size={25}/>
-              <div>Notifications</div>
+              <p>Notifications</p>
             </Link>
             {loggedUser ? (
             <div className='Me'>

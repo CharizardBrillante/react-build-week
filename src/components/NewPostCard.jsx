@@ -64,12 +64,14 @@ const NewPostCard = (props) => {
             </Card.Title>
             <Card.Text className='post-buttons'>
                 <span className='post-btn'>
-                    <form>
+                    <label htmlFor='input-file'>
                         <input
-                            type="file"
+                            id='input-file'
+                            type='file'
                             onChange={e => setSelectedFile(e.target.files[0])}
                         />
-                    </form>
+                        <BsCardImage size={25} color='blue' className='mx-1'/>
+                    </label>
                     Photo
                 </span>
                 <span className='post-btn'><BsFillPlayBtnFill size={25} color='green' className='mx-1'/> Video </span>

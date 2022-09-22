@@ -7,6 +7,7 @@ export const EDIT_EXPERIENCE = "EDIT_EXPERIENCE";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const SAVE_TOKEN = "SAVE_TOKEN";
+export const EDIT_IMAGE = "EDIT_IMAGE";
 
 export const getUsersAction = (users) => ({
     type: GET_USERS,
@@ -52,4 +53,9 @@ export const saveTokenAction = (token) => ({
   type: SAVE_TOKEN,
   payload: token
 
+})
+
+export const editImageAction = (user) => ({
+  type: EDIT_IMAGE,
+  payload: user
 })

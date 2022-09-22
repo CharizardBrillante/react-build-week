@@ -82,7 +82,7 @@ const EditProfileModal = (props) => {
               <Form.Control
                 type="file"
                 onChange={e => setSelectedFile(e.target.files[0])}
-              />
+            />
             </Form.Group>
               
             <Form.Group className="mb-3" controlId="">
