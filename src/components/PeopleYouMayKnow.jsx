@@ -12,7 +12,7 @@ const PeopleYouMayKnow = () => {
 
     useEffect(()=> {
         if (people) {
-        let data = people?.filter(u => u?.area===loggedUser?.area && u!==loggedUser);
+        let data = people?.filter(u => u?.area===loggedUser?.area && u._id!==loggedUser._id);
         let specialChars = /[`!@#$%^&*()_+\-=\[\] {};':"\\|,.<>\/?~]/;
         setPeopleYouMayKnow(data.filter(u => u.image !== '' || specialChars.test(u.image)));
         }

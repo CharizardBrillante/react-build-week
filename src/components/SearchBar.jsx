@@ -20,7 +20,7 @@ const SearchBar = () => {
         })
 
     return (
-        <div className='search-bar-cotainer'>
+        <div className='search-bar-container'>
             <Form className="search-bar">
                 <ImSearch color="grey" size={25} className='search-icon'/> 
                 <Form.Group className="mb-3">
