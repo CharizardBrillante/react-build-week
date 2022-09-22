@@ -37,7 +37,8 @@ const PostCard = (props) => {
                 </div>
             </Card.Title>
             <Card.Text className='post-content'>
-                {props.text}
+                <div>{props.text}</div>
+                <img src={props.postImg} alt='nothing interesting' className='post-img'/>
                 <div className='post-buttons'>
                     <span className='post-btn'><AiOutlineLike size={25} color='gray' className='mx-1'/> Like</span>
                     <span className='post-btn'><FaRegCommentDots size={25} color='gray' className='mx-1' 

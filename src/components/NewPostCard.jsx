@@ -5,12 +5,13 @@ import { MdOutlineEvent } from 'react-icons/md';
 import { RiArticleLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import ImgUploader from './imgUploader';
+import { imgUploader } from '../helper/imgUploader';
 
-const NewPostCard = () => {
+const NewPostCard = (props) => {
     const user = useSelector(state => state.loggedUser.loggedUser);
     const token = useSelector(state => state.loggedUser.token);
     const [postContent, setPostContent] = useState('');
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const post = (data = {}) => {
         const options = {
@@ -23,7 +24,7 @@ const NewPostCard = () => {
         }
         fetch('https://striveschool-api.herokuapp.com/api/posts/', options)
         .then(res => res.json())
-        .then(data => console.log('success', data))
+        .then(res => {console.log('post: ', res, 'img: ', selectedFile); if (selectedFile){imgUploader(selectedFile, token, 'posts', res._id, props.getPosts)}; props.getPosts();})
         .catch(err => console.log('error', err))
     }
 
@@ -63,13 +64,12 @@ const NewPostCard = () => {
             </Card.Title>
             <Card.Text className='post-buttons'>
                 <span className='post-btn'>
-                    <ImgUploader //PROPS : section, experience, expId, mainId, size, color
-                        section='posts'
-                        experience={false}
-                        mainId={1}
-                        size={25}
-                        color="green"
-                    /> 
+                    <form>
+                        <input
+                            type="file"
+                            onChange={e => setSelectedFile(e.target.files[0])}
+                        />
+                    </form>
                     Photo
                 </span>
                 <span className='post-btn'><BsFillPlayBtnFill size={25} color='green' className='mx-1'/> Video </span>
