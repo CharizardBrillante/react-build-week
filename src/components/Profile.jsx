@@ -7,7 +7,7 @@ import Experiences from "./Experiences";
 import PeopleYouMayKnow from "./PeopleYouMayKnow";
 import ProfileMainArea from "./ProfileMainArea";
 
-const Profile = () => {
+const Profile = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
   const user = useSelector(
@@ -51,7 +51,7 @@ const Profile = () => {
     <Container>
       <Row>
         <Col md={7} lg={9}>
-          <ProfileMainArea user={user} />
+          <ProfileMainArea user={user} getUsers={props.getUsers} />
           <Experiences experiences={experiences} fetchExperiences={fetchExperiences} />
         </Col>
         <Col md={5} lg={3}>

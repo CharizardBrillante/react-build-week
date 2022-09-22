@@ -1,19 +1,35 @@
-import { GET_USERS } from "../actions";
+import { EDIT_USER, GET_USERS } from "../actions";
 
 const initialState = {
-  fetchedUsers: []
-}
+  fetchedUsers: [],
+  userChanges: {
+    name: "",
+    surname: "",
+    email: "",
+    bio: "",
+    title: "",
+    area: "",
+  },
+};
 
 const usersReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case GET_USERS:
       return {
         ...state,
-        fetchedUsers: [...state.fetchedUsers, action.payload]
-      }
+        fetchedUsers: [...state.fetchedUsers, action.payload],
+      };
+    case EDIT_USER:
+      return {
+        ...state,
+        userChanges: {
+          ...state.userChanges,
+          ...action.payload,
+        },
+      };
     default:
       return state;
   }
-}
+};
 
 export default usersReducer;

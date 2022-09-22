@@ -1,4 +1,5 @@
 export const GET_USERS = "GET_USERS";
+export const EDIT_USER = "EDIT_USER";
 export const GET_EXPERIENCES = "GET_EXPERIENCES";
 export const NEW_EXPERIENCE = "NEW_EXPERIENCE";
 export const EDIT_EXPERIENCE = "EDIT_EXPERIENCE";
@@ -8,6 +9,11 @@ export const LOGOUT = "LOGOUT";
 export const getUsersAction = (users) => ({
     type: GET_USERS,
     payload: users
+})
+
+export const editUserAction = (user) => ({
+  type: EDIT_USER,
+  payload: user
 })
 
 export const getExperiencesAction = (exp) => ({

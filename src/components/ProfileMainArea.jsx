@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { BsPencil } from "react-icons/bs";
+import EditProfileModal from "./EditProfileModal";
 
-const ProfileMainArea = ({ user }) => {
+const ProfileMainArea = (props) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <Row className="main-profile-card rounded-3 border border-1 border-muted mb-2">
@@ -9,8 +16,8 @@ const ProfileMainArea = ({ user }) => {
           <div className="img-wrapper text-start">
             <img
               className="border border-2 border-white rounded-pill mb-3"
-              src={user?.image}
-              alt={user?.name + " " + user?.surname + " profile pic"}
+              src={props.user?.image}
+              alt={props.user?.name + " " + props.user?.surname + " profile pic"}
               height={152}
               width={152}
             />
@@ -18,12 +25,20 @@ const ProfileMainArea = ({ user }) => {
           <div className="text-start">
             <div className="d-flex justify-content-between">
               <h1 className="">
-                {user?.name} {user?.surname}
+                {props.user?.name} {props.user?.surname}
               </h1>
-              <span type="button" className="profile-edit-icon-container"><BsPencil className="profile-edit-icon text-secondary"/></span>
+              <span
+                type="button"
+                className="profile-edit-icon-container"
+                onClick={() => {
+                  handleShow();
+                }}
+              >
+                <BsPencil className="profile-edit-icon text-secondary" />
+              </span>
             </div>
-            <p className="mb-1">{user?.title}</p>
-            <p className="text-secondary">{user?.area}</p>
+            <p className="mb-1">{props.user?.title}</p>
+            <p className="text-secondary">{props.user?.area}</p>
             <Button className="btn-follow me-1 rounded-pill">Segui</Button>
             <Button variant="white" className="btn-msg me-1 rounded-pill">
               Messaggio
@@ -37,6 +52,7 @@ const ProfileMainArea = ({ user }) => {
           </div>
         </Col>
       </Row>
+      <EditProfileModal show={show} onClose={handleClose} user={props.user} getUsers={props.getUsers} />
     </>
   );
 };
