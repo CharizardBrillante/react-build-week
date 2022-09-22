@@ -1,6 +1,11 @@
 .App {
   text-align: center;
   margin: 0 auto;
+  background: #e7e6e1;
+}
+
+.body-container {
+  padding: 0vh 10vw;
 }
 
 
@@ -36,6 +41,8 @@
   justify-content: space-between!important;
   align-items: center!important;
   gap: 1em!important;
+  background: #fff!important;
+  margin-bottom: 2vh!important;
 }
 .nav-anchors {
   display: flex!important;
@@ -346,3 +353,39 @@ ul, #li{
   color: #0077B5;
   list-style-type: none;
 }
+
+footer {
+  margin-top: 2vh;
+}
+.footer-links {
+  display: flex!important;
+  flex-flow: row wrap!important;
+  justify-content: center!important;
+  align-items: center!important;
+  gap: 10px!important;
+}
+.footer-logo {
+  width: 60px!important;
+}
+footer a {
+  text-decoration: none;
+  color: var(--gray) !important;
+  font-size: 0.8rem!important;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--linkedin-blue)!important;
+}
+.footer-copy {
+  font-size: 0.85rem!important;
+}
+/*@media screen and (min-width: 1024px) {
+  .profile-sidebar {
+    position: fixed!important;
+  }
+  .people-list {
+    position: fixed!important;
+    margin-top: 0!important;
+  }
+}*/

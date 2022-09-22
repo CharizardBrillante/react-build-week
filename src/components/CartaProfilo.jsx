@@ -9,7 +9,7 @@ const CartaProfilo = () => {
     const loggedUser = useSelector((state) => state.loggedUser.loggedUser);
 
   return (
-    <div>
+    <div className='profile-sidebar'>
     <Card style={{ width: '13rem' }}>
       
       <Card.Header className='cardheadeer'>

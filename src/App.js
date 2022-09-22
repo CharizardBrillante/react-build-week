@@ -40,11 +40,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <MyNavbar/>
-        <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path="/user/:id" element={<Profile />} />
-          <Route path='/login' element={<Login/>}/>
-        </Routes>
+        <div className='body-container'>
+          <Routes>
+            <Route path='/' element={<Home/>}/>
+            <Route path="/user/:id" element={<Profile />} />
+            <Route path='/login' element={<Login/>}/>
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );

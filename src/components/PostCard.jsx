@@ -23,6 +23,7 @@ const PostCard = (props) => {
         else if (days > 0) {return `${days} days ago`}
         else if (hours > 0) {return `${hours} hours ago`}
         else if (min > 0) {return `${min} min ago`}
+        else {return 'now'}
     }
     const datesDiff = (start, end = now) => end - Date.parse(start);
 

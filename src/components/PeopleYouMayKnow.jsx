@@ -19,7 +19,7 @@ const PeopleYouMayKnow = () => {
     }, [people])
 
     return (
-        <ListGroup>
+        <ListGroup className='people-list'>
 
             <ListGroup.Item>
                 <h4>People you may know</h4>
