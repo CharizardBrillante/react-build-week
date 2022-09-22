@@ -290,6 +290,13 @@
 }
 /*----------------------- SIDEBAR CARD -----------------------------------*/
 
+#button {
+  border: none;
+  background: white;
+  text-decoration: underline;
+  color: #0077B5;
+}
+
 #imgSidebar {
   border-radius: 50%;
 
@@ -316,9 +323,6 @@
 
 .info-wrapper {
   padding: 20px;
-}
-.card{
-  border-radius: 10%;
 }
 
 ul, #li{

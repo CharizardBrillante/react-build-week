@@ -3,6 +3,7 @@ import NewPostCard from './NewPostCard';
 import News from './News';
 import PeopleYouMayKnow from './PeopleYouMayKnow';
 import { useSelector } from 'react-redux';
+import CartaProfilo from './CartaProfilo';
 
 const Home = () => {
     const loggedUser = useSelector(state => state.loggedUser.loggedUser);
@@ -11,7 +12,7 @@ const Home = () => {
         <Container fluid>
             <Row>
                 <Col lg={3}>
-
+                {loggedUser && <CartaProfilo/>}
                 </Col>
                 <Col lg={6}>
                     {loggedUser && <NewPostCard/>}
