@@ -1,13 +1,15 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { BsPencil } from "react-icons/bs";
 import EditProfileModal from "./EditProfileModal";
-import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { imgUploader } from "../../helper/imgUploader";
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const ProfileMainArea = (props) => {
+  const params = useParams();
+  const loggedUser = useSelector(state => state.loggedUser.loggedUser);
+  const myProfile = params.id === loggedUser._id ? true : false;
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);    
 
@@ -41,15 +43,15 @@ const ProfileMainArea = (props) => {
             </div>
             <p className="mb-1">{props.user?.title}</p>
             <p className="text-secondary">{props.user?.area}</p>
-            <Button className="btn-follow me-1 rounded-pill">Segui</Button>
+            <Button className="btn-follow me-1 rounded-pill">{myProfile ? 'Open to' : 'Connect'}</Button>
             <Button variant="white" className="btn-msg me-1 rounded-pill">
-              Messaggio
+              {myProfile ? 'Add Profile Section' : 'Message'}
             </Button>
             <Button
               variant="white"
               className="btn-other rounded-pill text-secondary border border-1 border-secondary"
             >
-              Altro
+              More
             </Button>
           </div>
         </Col>

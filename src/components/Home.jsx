@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <Container fluid>
             <Row>
-                <Col md={3} className='left-bar'>
+                <Col xs={12} lg={3} className='left-bar'>
                 {loggedUser && <CartaProfilo/>}
                 </Col>
                 <Col lg={6}>

@@ -52,6 +52,7 @@ const Experiences = (props) => {
               onOpen={handleShow}
               expToEdit={expToEdit}
               setExpToEdit={setExpToEdit}
+              expId={exp._id}
             />
           ))}
         </Col>

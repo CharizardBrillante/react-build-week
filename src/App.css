@@ -15,20 +15,20 @@
 .logo{
   width:40px;
 }
-
+.spinners {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px!important;
+  justify-content: center;
+  align-items: center;
+}
 .navbar-nav a{
   text-decoration: none;
   color: #5f5f5fe1;
-  margin: 1rem
-}
-.Me, .work-icon {
-  padding: 0em 1em;
-}
-.Me {
   margin-top: 1em;
 }
-.work-icon {
-  padding-top: 1em;
+.Me, .work-icon {
+  padding: 1em 0em 1em;
 }
 #Account {
   list-style-type: none;
@@ -91,15 +91,10 @@
     display: none;
   }
   .right-bar {
-    width: 0!important;
+    display: none!important;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .left-bar {
-    width: 0!important;
-  }
-}
 /*----------------------- LOGIN --------------------------------*/
 .login-form {
   width: 40vw!important;
@@ -130,7 +125,17 @@
   margin-top: 1em!important;
   min-width: 13vw!important;
 }
+
+@media screen and (max-width: 992px) {
+  .search-bar-container {
+    min-width: 5vw!important;
+  }
+}
 /*----------------------- PEOPLE YOU MAY KNOW -----------------------------------*/
+
+.people-list {
+  width: 100%!important;
+}
 .people-preview img {
   width: 50px;
   height: 50px;
@@ -158,7 +163,7 @@
 .text-left {
   text-align: left!important;
 }
-.people-btn {
+.show-more-people {
   color: var(--dark-gray) !important;
   background: #fff!important;
   border: 1px solid var(--light-gray)!important;
@@ -168,6 +173,11 @@
   justify-content: center!important;
 }
 
+@media screen and (max-width: 1199px) {
+  .people-btn {
+    display: none!important;
+  }
+}
 /*------------------------ POST ---------------------------------*/
 .post-row {
   margin-bottom: 10px!important;
@@ -249,6 +259,12 @@
 .comment-author {
   font-weight: 500 !important;
 }
+.comment-date {
+  color: var(--gray)!important;
+  text-align: right!important;
+  flex-grow: 3!important;
+  font-size: .8rem!important;
+}
 /*----------------------- PROFILE CARD -----------------------------------*/
 
 .main-profile-card {
@@ -327,62 +343,90 @@
   background-color: lightgrey;
 }
 
-.people-preview button {
-  color: var(--dark-gray)!important;
-  background: transparent !important;
-  border: 1px solid var(--dark-gray)!important;
-  border-radius: 5px!important;
-  margin: 0 !important;
+/*----------------------- SIDE PROFILE CARD -----------------------------------*/
+.side-profile-links {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: left!important;
 }
-/*----------------------- SIDEBAR CARD -----------------------------------*/
 
-#button {
+.side-profile-link {
   border: none;
   background: white;
-  text-decoration: underline;
   color: #0077B5;
+  font-weight: 500;
+  text-decoration: none;
 }
-
-.circular-landscape {
+.side-profile-subtitle {
+  color: var(--gray)!important;
+}
+.side-profile-img {
   display: inline-block;
   position: relative;
   width: 68px;
   height: 68px;
   overflow: hidden;
   border-radius: 50%;
+  outline: 2px solid #fff;
+  margin-bottom: 2vh;
   }
-  .circular-landscape img {
-  width: auto;
-  height: 100%;
-  }
-
-#crdsd{
-  text-align: left;
-}
-
 .card-header{
   padding: 0;
 }
-
-.imgsideprofile {
+.side-profile-mid {
+  text-align: left!important;
+}
+.p-card-mid-1{
+  font-weight: 500!important;
+  color: var(--gray)!important;
+  margin: 0em auto!important;
+}
+.p-card-mid-2-h{
+  font-size: .8rem!important;
+  color: var(--gray)!important;
+  margin-bottom: 0!important;
+}
+.p-card-mid-2 {
+  text-decoration: underline;
+  font-size: .95rem!important;
+}
+.p-card-bottom {
+  color: var(--dark-gray)!important;
+  font-weight: 500!important;;
+}
+.side-profile-header-img {
   margin-bottom: -40px;
   height: 70px;
   width: 100%;
 }
 
-.text-left {
-  text-align: left!important;
+@media screen and (max-width: 992px) {
+  .side-profile-mid {
+    display: none!important;
+  }
+  .side-profile-bottom {
+    display: none!important;
+  }
+  .profile-sidebar {
+    margin: auto .8em 3vh!important;
+  }
+  .side-profile-img {
+    width: 100px!important;
+    height: 100px!important;
+  }
+  .side-profile-header-img{
+    height: 100px;
+  }
+  
 }
 
-.info-wrapper {
-  padding: 20px;
+@media screen and (max-width: 768px) {
+  .profile-sidebar {
+    width: 100%!important;
+    margin: auto 1.5em 3vh!important;
+  }
 }
-
-ul, #li{
-  color: #0077B5;
-  list-style-type: none;
-}
-
+/* -------------------------------- FOOTER ---------------------------------*/
 footer {
   margin-top: 2vh;
 }

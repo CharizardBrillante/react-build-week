@@ -3,54 +3,48 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useSelector } from "react-redux";
 import{BsBookmarkFill} from 'react-icons/bs'
 import {AiFillSketchSquare} from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
 
 const CartaProfilo = () => {
     
     const loggedUser = useSelector((state) => state.loggedUser.loggedUser);
+    const navigate = useNavigate();
 
   return (
     <div className='profile-sidebar'>
     <Card>
       
-      <Card.Header className='cardheadeer'>
-      <img src='https://img.freepik.com/free-vector/abstract-low-poly-elegant-design_1048-13699.jpg' alt='' className='imgsideprofile'/>
-      
-      <div className='circular-landscape'>
-      <img id='imgSidebar'
-       src={loggedUser.image}
-       roundedCircle
-       width={"68px"}
-       alt=''
-        />
-      </div>
-        <h5><b>{loggedUser.name}</b></h5>
-        <h6>Impiego</h6>
+      <Card.Header className='side-profile-header'>
+        <img src='https://cuborosso.com/wp-content/uploads/2019/10/linkedin-background-image-elegant-awesome-linkedin-cover-ideas-pilation-of-linkedin-background-image.jpg' alt='' className='side-profile-header-img'/>        
+        <img className='side-profile-img' src={loggedUser.image} alt='' onClick={()=>navigate(`/user/${loggedUser._id}`)}/>
+        <h5 onClick={()=>navigate(`/user/${loggedUser._id}`)}>{loggedUser.name} {loggedUser.surname}</h5>
+        <p className='side-profile-subtitle'>{loggedUser.title}</p>
       </Card.Header>
       
-      <ListGroup  id='crdsd'>
-        <ListGroup.Item><h6>Collegamenti</h6>
-        <p><b>Espandi la tua rete</b></p></ListGroup.Item>
+      <ListGroup className='side-profile-mid'>
+        <ListGroup.Item>
+          <p className='p-card-mid-1'>Connections</p>
+          <p className='p-card-mid-1'>Grow your network</p>
+        </ListGroup.Item>
 
-        <ListGroup.Item><p>Accedi a strumenti e informazioni in esclusiva</p><p id='premium'><AiFillSketchSquare style={{color: 'gold'}}/> Try Premium for free</p></ListGroup.Item>
-
-        <ListGroup.Item><p><BsBookmarkFill/><b> I miei elementi</b></p></ListGroup.Item>
+        <ListGroup.Item>
+          <p className='p-card-mid-2-h'>Access exclusive tools &amp; insights</p>
+          <p className='p-card-mid-2'><AiFillSketchSquare size={23} style={{color: 'gold'}}/> Try Premium for free</p>
+        </ListGroup.Item>
+        <ListGroup.Item>
+          <p className='p-card-bottom'><BsBookmarkFill/>My items</p>
+        </ListGroup.Item>
       </ListGroup>
     </Card>
 
-    <Card className='mt-3'>
-    <ListGroup   id='crdsd'>
-        <ListGroup.Item>
-        
-            <button id='button'>Groups</button> <br />
-            <button id='button'>Event</button>  <br />
-            <button id='button'>Followed hashtags</button>
-          
-          
-          
-          
+    <Card className='mt-3 side-profile-bottom'>
+    <ListGroup>
+        <ListGroup.Item className='side-profile-links'>        
+            <Link to='/' className='side-profile-link'>Groups</Link>
+            <Link to='/' className='side-profile-link'>Event</Link>
+            <Link to='/' className='side-profile-link'>Followed hashtags</Link>
         </ListGroup.Item>
-
-        <ListGroup.Item className='text-center'>Discover More</ListGroup.Item>
+        <ListGroup.Item>Discover More</ListGroup.Item>
       </ListGroup>
     </Card>
     </div>

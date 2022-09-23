@@ -6,26 +6,12 @@ import { IoIosShareAlt } from 'react-icons/io';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import CommentsList from './CommentsList';
 import { useState } from 'react';
+import { timePassed, datesDiff } from '../../helper/timePassed';
 
 const PostCard = (props) => {
-    const now = new Date().getTime();
     const navigate = useNavigate();
     const [showComments, setShowComments] = useState(false);
-
-    const timePassed = (ms) => {
-        let min = Math.floor(ms / (1000 * 60));
-        let hours = Math.floor(min / 60);
-        let days = Math.floor(hours / 24);
-        let months = Math.floor(days / 30);
-        let years = Math.floor(months / 12);
-        if (years > 0) {return `${years} years ago`}
-        else if (months > 0) {return `${months} months ago`}
-        else if (days > 0) {return `${days} days ago`}
-        else if (hours > 0) {return `${hours} hours ago`}
-        else if (min > 0) {return `${min} min ago`}
-        else {return 'now'}
-    }
-    const datesDiff = (start, end = now) => end - Date.parse(start);
+    
 
     return (
         <Card>
@@ -39,7 +25,7 @@ const PostCard = (props) => {
             </Card.Title>
             <Card.Text className='post-content'>
                 <div>{props.text}</div>
-                <img src={props.postImg} alt='nothing interesting' className='post-img'/>
+                {props.postImg && <img src={props.postImg} alt='nothing interesting' className='post-img'/>}
                 <div className='post-buttons'>
                     <span className='post-btn'><AiOutlineLike size={25} color='gray' className='mx-1'/> Like</span>
                     <span className='post-btn'><FaRegCommentDots size={25} color='gray' className='mx-1' 

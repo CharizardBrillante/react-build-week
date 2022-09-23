@@ -70,7 +70,7 @@ const PeopleYouMayKnow = () => {
                     onClick={() => setOpen(!open)}
                     aria-controls="example-collapse-text"
                     aria-expanded={open}
-                    className="people-btn">
+                    className="show-more-people">
                         {open ? <span>Show Less <BsChevronCompactUp size={25} color="gray"/></span> : <span>Show More <BsChevronCompactDown size={25} color="gray"/></span>}
                 </Button>
                 </>

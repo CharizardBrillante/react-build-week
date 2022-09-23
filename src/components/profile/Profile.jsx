@@ -14,7 +14,7 @@ const Profile = (props) => {
     (state) =>
       state.users.fetchedUsers[0]?.filter((el) => el._id === params.id)[0]
   );
-
+  const token = useSelector(state => state.loggedUser.token);
   const experiences = useSelector(state => state.experiences.fetchedExperiences);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Profile = (props) => {
           headers: {
             Accept: "application/json",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWJkZjZkNzlhNTAwMTUwOTAyZWUiLCJpYXQiOjE2NjM1NzI5NjAsImV4cCI6MTY2NDc4MjU2MH0.TBiQ1Cyg8H0ysQhW1CxyB80Nbf5EaV0yPUj6tU2R9zQ",
+              `Bearer ${token}`,
           },
         }
       );
@@ -51,11 +51,11 @@ const Profile = (props) => {
   return (
     <Container>
       <Row>
-        <Col md={7} lg={9}>
+        <Col md={7} lg={8}>
           <ProfileMainArea user={user} />
           <Experiences experiences={experiences} fetchExperiences={getExperiences} />
         </Col>
-        <Col md={5} lg={3}>
+        <Col md={5} lg={4}>
           <PeopleYouMayKnow />
         </Col>
       </Row>

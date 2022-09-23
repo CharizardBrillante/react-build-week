@@ -1,6 +1,7 @@
 import { ListGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import { timePassed, datesDiff } from "../../helper/timePassed";
 import Comment from './Comment';
 
 const CommentsList = (props) => {
@@ -32,6 +33,7 @@ const CommentsList = (props) => {
                     <ListGroup.Item className='comment'>
                         <span className='comment-author'>{c.author}</span>
                         <span>{c.comment}</span>
+                        <span className='comment-date'>{timePassed(datesDiff(c.createdAt))}</span>
                     </ListGroup.Item> : ''
             ))}
         </ListGroup>

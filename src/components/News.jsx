@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import PostCard from './posts/PostCard';
 import NewPostCard from './posts/NewPostCard';
+import LoadingSpinner from './LoadingSpinner';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -12,6 +13,7 @@ const News = () => {
     const [displayedPosts, setDisplayedPosts] = useState(posts.slice(0, numberOfPosts));
     const token = useSelector(state => state.loggedUser.token);
     const loggedUser = useSelector(state => state.loggedUser.loggedUser);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getPosts();
@@ -26,12 +28,13 @@ const News = () => {
         const options = {
             method: "GET",
             headers: {
-            Accept: "application/json",
-            Authorization:`Bearer ${token}`            },
+                Accept: "application/json",
+                Authorization:`Bearer ${token}`            
+            },
         }
         fetch('https://striveschool-api.herokuapp.com/api/posts/', options)
         .then(res => res.json())
-        .then((res) => {setPosts([...posts, ...res].reverse()); console.log(posts)})
+        .then((res) => {setPosts(res.reverse()); console.log(posts); setLoading(false)})
 
     }
     
@@ -43,9 +46,9 @@ const News = () => {
                     <Col>
                         <PostCard 
                             author={p.user?.name + ' ' + p.user?.surname}
-                            imgUrl={p.user?.image}
+                            imgUrl={p.user?.image} 
                             text={p.text}
-                            postImg={p.image}
+                            postImg={p.image ? p.image : null}
                             date={p.createdAt}
                             profile={`/user/${p.user?._id}`}
                             postId={p._id}
@@ -54,9 +57,10 @@ const News = () => {
                 </Row>
             ))}
             <Row className='load-posts-row'>
-                <Button className='load-posts-btn' onClick={()=>setCurrentPage(currentPage + 1)}>
+                {loading && <LoadingSpinner />}
+                {!loading && <Button className='load-posts-btn' onClick={()=>setCurrentPage(currentPage + 1)}>
                     Load More
-                </Button>
+                </Button>}
             </Row>
         </Container>
     )

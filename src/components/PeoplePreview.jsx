@@ -14,7 +14,7 @@ const PeoplePreview = (props) => {
                 <Col md={8} className="mx-0 text-left">
                     <h5>{props.name}</h5>
                     <p>{props.workPosition}</p>
-                    <Button bg="transparent" onClick={()=> navigate(`/user/${props.id}`)}><TbUserPlus/> Connect</Button>
+                    <Button bg="transparent" onClick={()=> navigate(`/user/${props.id}`)}><TbUserPlus/> <span className='people-btn'>Connect</span></Button>
                 </Col>
             </Row>
         </Container>

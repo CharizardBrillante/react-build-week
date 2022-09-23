@@ -37,10 +37,7 @@ const usersReducer = (state = initialState, action) => {
     case EDIT_USER:
       return {
         ...state,
-        userChanges: {
-          ...state.userChanges,
-          ...action.payload,
-        },
+        userChanges: action.payload
       };
     default:
       return state;
