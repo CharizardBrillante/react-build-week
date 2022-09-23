@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const ProfileMainArea = (props) => {
+  
   const params = useParams();
   const loggedUser = useSelector(state => state.loggedUser.loggedUser);
   const myProfile = params.id === loggedUser._id ? true : false;

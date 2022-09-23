@@ -53,6 +53,7 @@ const SingleExperience = (props) => {
             <AiOutlineDelete
               className="upd-el-icon text-secondary ms-1"
               onClick={deleteExperience}
+              size={21}
             />
           </span>
         }
