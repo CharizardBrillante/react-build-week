@@ -15,13 +15,14 @@ const CartaProfilo = () => {
       <Card.Header className='cardheadeer'>
       <img src='https://img.freepik.com/free-vector/abstract-low-poly-elegant-design_1048-13699.jpg' alt='' className='imgsideprofile'/>
       
+      <div className='circular-landscape'>
       <img id='imgSidebar'
        src={loggedUser.image}
        roundedCircle
        width={"68px"}
        alt=''
         />
-        
+      </div>
         <h5><b>{loggedUser.name}</b></h5>
         <h6>Impiego</h6>
       </Card.Header>
