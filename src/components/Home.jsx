@@ -1,5 +1,4 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import NewPostCard from './NewPostCard';
 import News from './News';
 import PeopleYouMayKnow from './PeopleYouMayKnow';
 import { useSelector } from 'react-redux';
@@ -12,7 +11,7 @@ const Home = () => {
     return (
         <Container fluid>
             <Row>
-                <Col lg={3} className='left-bar'>
+                <Col md={3} className='left-bar'>
                 {loggedUser && <CartaProfilo/>}
                 </Col>
                 <Col lg={6}>

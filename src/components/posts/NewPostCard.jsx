@@ -5,7 +5,7 @@ import { MdOutlineEvent } from 'react-icons/md';
 import { RiArticleLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { imgUploader } from '../helper/imgUploader';
+import { imgUploader } from '../../helper/imgUploader';
 
 const NewPostCard = (props) => {
     const user = useSelector(state => state.loggedUser.loggedUser);

@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import PostCard from './PostCard';
-import NewPostCard from './NewPostCard';
+import PostCard from './posts/PostCard';
+import NewPostCard from './posts/NewPostCard';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -34,7 +34,7 @@ const News = () => {
         .then((res) => {setPosts([...posts, ...res].reverse()); console.log(posts)})
 
     }
-
+    
     return (
         <Container fluid className="news-container">
             {loggedUser && <NewPostCard getPosts={getPosts}/>}

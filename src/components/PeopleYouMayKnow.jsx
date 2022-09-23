@@ -12,12 +12,29 @@ const PeopleYouMayKnow = () => {
 
     useEffect(()=> {
         if (people) {
-        let data = people?.filter(u => u?.area===loggedUser?.area && u._id!==loggedUser._id);
-        let specialChars = /[`!@#$%^&*()_+\-=\[\] {};':"\\|,.<>\/?~]/;
-        setPeopleYouMayKnow(data.filter(u => u.image !== '' || specialChars.test(u.image)));
+        let data = people?.filter(u => compareArea(u.area, loggedUser.area));
+
+        setPeopleYouMayKnow(data.filter(u => u.image !== ''));
         }
+        console.log(loggedUser.area)
     }, [people])
 
+    const compareArea = (area1, area2) => {
+        let arr1 = area1?.split(' ');
+        let arr2 = area2?.split(' ');
+        if (typeof arr1 === 'object' && typeof arr2 === 'object') {
+            for (let atom1 of arr1) {
+                for (let atom2 of arr2) {
+                    if (atom1.toLowerCase() === atom2.toLowerCase()) {
+                        return true
+                    }   
+                }
+            }
+        }
+        //console.log('area1: ', area1, 'area2: ', area2)
+        //console.log('arr1: ', arr1, 'arr2: ', arr2)
+        return false
+    };
     return (
         <ListGroup className='people-list'>
 

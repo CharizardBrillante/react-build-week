@@ -3,7 +3,7 @@ import { BsPencil } from "react-icons/bs";
 import EditProfileModal from "./EditProfileModal";
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import { imgUploader } from "../helper/imgUploader";
+import { imgUploader } from "../../helper/imgUploader";
 
 const ProfileMainArea = (props) => {
   const [show, setShow] = useState(false);

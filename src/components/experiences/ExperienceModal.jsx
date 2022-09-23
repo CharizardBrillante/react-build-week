@@ -4,12 +4,13 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { EDIT_EXPERIENCE, NEW_EXPERIENCE } from "../redux/actions";
+import { EDIT_EXPERIENCE, NEW_EXPERIENCE } from "../../redux/actions";
 
 const ExperiencesModal = (props) => {
   const params = useParams();
   const dispatch = useDispatch();
   const formData = useSelector((state) => state.experiences.newExperience);
+  const token = useSelector(state => state.loggedUser.token);
 
   const submitFormExperience = async (id) => {
     try {
@@ -22,7 +23,7 @@ const ExperiencesModal = (props) => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzI4MWJkZjZkNzlhNTAwMTUwOTAyZWUiLCJpYXQiOjE2NjM1NzI5NjAsImV4cCI6MTY2NDc4MjU2MH0.TBiQ1Cyg8H0ysQhW1CxyB80Nbf5EaV0yPUj6tU2R9zQ",
+              `Bearer ${token}`,
           },
           body: JSON.stringify(formData),
         }

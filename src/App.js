@@ -1,12 +1,11 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import MyNavbar from "./components/MyNavbar";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUsersAction } from "./redux/actions";
-import Profile from "./components/Profile";
+import MyNavbar from "./components/nav/MyNavbar";
+import Profile from "./components/profile/Profile";
 import Login from "./components/Login";
 import Home from "./components/Home";
 

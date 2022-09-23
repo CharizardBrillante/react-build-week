@@ -6,7 +6,7 @@ import { AiFillMessage } from 'react-icons/ai';
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { logoutAction } from '../redux/actions';
+import { logoutAction } from '../../redux/actions';
 import NavOffCanvas from './NavOffCanvas';
 import SearchBar from './SearchBar';
 

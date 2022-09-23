@@ -1,7 +1,7 @@
 import { GET_EXPERIENCES, NEW_EXPERIENCE, EDIT_EXPERIENCE } from "../actions";
 
 const initialState = {
-  fetchedUserExperiences: [],
+  fetchedExperiences: [],
   newExperience: {
     role: "",
     company: "",
@@ -18,7 +18,7 @@ const experiencesReducer = (state = initialState, action) => {
     case GET_EXPERIENCES:
       return {
         ...state,
-        fetchedUserExperiences: action.payload
+        fetchedExperiences: action.payload
       }
       case NEW_EXPERIENCE:
         return {

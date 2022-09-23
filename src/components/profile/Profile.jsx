@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getExperiencesAction } from "../redux/actions";
-import Experiences from "./Experiences";
-import PeopleYouMayKnow from "./PeopleYouMayKnow";
+import { getExperiencesAction } from "../../redux/actions";
+import Experiences from "../experiences/Experiences";
+import PeopleYouMayKnow from "../PeopleYouMayKnow";
 import ProfileMainArea from "./ProfileMainArea";
 
 const Profile = (props) => {
@@ -15,17 +15,18 @@ const Profile = (props) => {
       state.users.fetchedUsers[0]?.filter((el) => el._id === params.id)[0]
   );
 
-  const experiences = useSelector(state => state.experiences.fetchedUserExperiences);
+  const experiences = useSelector(state => state.experiences.fetchedExperiences);
 
   useEffect(() => {
     //console.log("user: ", user);
-    experiences.length === 0 && fetchExperiences(params.id);
-  }, [/* user, experiences */]);
+    getExperiences();
+    console.log('user._id: ', params.id);
+  }, []);
 
-  const fetchExperiences = async (id) => {
+  const getExperiences = async () => {
     try {
       const res = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${id}/experiences`,
+        `https://striveschool-api.herokuapp.com/api/profile/${params.id}/experiences`,
         {
           method: "GET",
           headers: {
@@ -52,7 +53,7 @@ const Profile = (props) => {
       <Row>
         <Col md={7} lg={9}>
           <ProfileMainArea user={user} />
-          <Experiences experiences={experiences} fetchExperiences={fetchExperiences} />
+          <Experiences experiences={experiences} fetchExperiences={getExperiences} />
         </Col>
         <Col md={5} lg={3}>
           <PeopleYouMayKnow />

@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { EDIT_USER, UPDATE_FETCHED_USERS } from "../redux/actions";
-import { imgUploader } from "../helper/imgUploader";
+import { EDIT_USER, UPDATE_FETCHED_USERS } from "../../redux/actions";
+import { imgUploader } from "../../helper/imgUploader";
 
 const EditProfileModal = (props) => {
   const dispatch = useDispatch();

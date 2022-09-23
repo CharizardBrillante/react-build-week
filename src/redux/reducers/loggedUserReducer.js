@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, SAVE_TOKEN, EDIT_IMAGE } from "../actions";
+import { LOGIN, LOGOUT, SAVE_TOKEN} from "../actions";
 
 const initialState = {
   loggedUser: null,
@@ -21,14 +21,6 @@ const loggedUserReducer = (state = initialState, action) => {
       return {
         ...state,
         token : action.payload
-      }
-    case EDIT_IMAGE:
-      return {
-        ...state,
-          loggedUser: {
-            ...state.loggedUser,
-            image: action.payload
-          },
       }
     default:
       return state;

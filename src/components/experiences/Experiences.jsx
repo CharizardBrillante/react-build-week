@@ -1,18 +1,24 @@
 import { Col, Row } from "react-bootstrap";
 import SingleExperience from "./SingleExperience";
 import { BsPlusLg } from "react-icons/bs";
-import ExperiencesModal from "./ExperienceModal";
+import ExperiencesModal from './ExperienceModal';
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Experiences = (props) => {
+  const params = useParams();
+  const loggedUser = useSelector(state => state.loggedUser.loggedUser);
+  const myProfile = params.id === loggedUser._id ? true : false;
+
   const [expToEdit, setExpToEdit] = useState(null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   useEffect(() => {
     console.log(props);
+    console.log('Params: ', params)
   }, [])
 
   return (
@@ -29,13 +35,13 @@ const Experiences = (props) => {
                 type="button"
                 className="action-icon-container d-inline-block"
               >
-                <BsPlusLg
+                {myProfile && <BsPlusLg
                   className="add-el-icon text-secondary"
                   onClick={() => {
                     setExpToEdit(null)
                     handleShow()
                   }}
-                />
+                />}
               </span>
             </div>
           </div>
