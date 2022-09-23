@@ -10,7 +10,7 @@ const CartaProfilo = () => {
 
   return (
     <div className='profile-sidebar'>
-    <Card style={{ width: '13rem' }}>
+    <Card>
       
       <Card.Header className='cardheadeer'>
       <img src='https://img.freepik.com/free-vector/abstract-low-poly-elegant-design_1048-13699.jpg' alt='' className='imgsideprofile'/>
@@ -26,7 +26,7 @@ const CartaProfilo = () => {
         <h6>Impiego</h6>
       </Card.Header>
       
-      <ListGroup   id='crdsd'>
+      <ListGroup  id='crdsd'>
         <ListGroup.Item><h6>Collegamenti</h6>
         <p><b>Espandi la tua rete</b></p></ListGroup.Item>
 
@@ -36,7 +36,7 @@ const CartaProfilo = () => {
       </ListGroup>
     </Card>
 
-    <Card style={{ width: '13rem' }} className='mt-3'>
+    <Card className='mt-3'>
     <ListGroup   id='crdsd'>
         <ListGroup.Item>
         
